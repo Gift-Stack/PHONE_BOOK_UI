@@ -1,0 +1,30 @@
+{
+    "contact": [
+        {
+            "firstName": "Gift",
+            "lastName": "Opia",
+            "phoneNumber": "333-444-555",
+            "email": "gift@gmail.com"
+        },
+        {
+            "firstName": "Favour",
+            "lastName": "Opia",
+            "phoneNumber": "333-444-555"
+        },
+        {
+            "firstName": "Frank",
+            "lasttName": "Opia",
+            "phone_numer": "333-444-555"
+        },
+        {
+            "firstName": "Abigail",
+            "lasttName": "Matthew",
+            "phone_numer": "333-444-555"
+        },
+        {
+            "firstName": "Deborah",
+            "lasttName": "Patrick",
+            "phone_numer": "333-444-555"
+        }
+    ]
+}
