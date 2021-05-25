@@ -3,7 +3,7 @@ import UserContext from './userContext';
 import UserReducer from './userReducer';
 import { LOADING, LOGIN, LOGIN_FAIL, LOGOUT, LOAD_USER } from '../types';
 import axios from 'axios';
-// import setAuthToken from '../utils/setAuthToken';
+import authAxios from '../../utils/setAuthToken';
 
 const UserState = ({ children }) => {
     const initialState = {
@@ -15,16 +15,8 @@ const UserState = ({ children }) => {
 
     const apiURL = 'https://we-skillz-phonebook-task.herokuapp.com/api/v1';
 
-    const authAxios = axios.create({
-        baseURL: apiURL,
-        headers: {
-            Authorization: `Bearer ${localStorage.token}`,
-        },
-    });
-
     useEffect(() => {
         loadUser();
-
         // eslint-disable-next-line
     }, []);
 
@@ -35,10 +27,7 @@ const UserState = ({ children }) => {
 
     // LOAD_USER
     const loadUser = async () => {
-        // if (localStorage.token) {
-        //     setAuthToken(localStorage.token);
-        // }
-
+        setLoading();
         const res = await authAxios.get(`${apiURL}/auth/me`);
         dispatch({ type: LOAD_USER, payload: res.data });
     };

@@ -44,6 +44,7 @@
 .logo {
     color: var(--unnamed-color-00955c) !important;
     font-weight: bold;
+    text-decoration: none;
 }
 .navbar-link {
     color: var(--unnamed-color-00955c);
@@ -86,13 +87,28 @@ button {
     background-color: #00955c;
     text-align: center;
 }
+#contact {
+    border-collapse: collapse;
+}
+#contact th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+#contact tr:hover {
+    background-color: #e5faf2;
+    cursor: pointer;
+}
+.truncate {
+    width: 6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media only screen and (max-width: 780px) {
     table {
         /* text-align: center;  */
         font-size: small;
     }
-    /* table tr:first-child {
-        text-align: center;
-    } */
 }

@@ -8,14 +8,24 @@ const Navbar = () => {
 
     const handleLogout = () => logout();
     return (
-        <nav className='navbar navbar-light bg-white justify-content-between d-flex align-items-center px-3 mb-4 border-bottom '>
-            <a className='navbar-brand logo'>Phonebook</a>
+        <nav className='navbar navbar-light bg-white justify-content-between d-flex align-items-center px-4 px-md-5 mb-4 border-bottom '>
+            <a className=' logo' style={{ fontSize: '1.9em' }}>
+                Phonebook
+            </a>
             {!isAuthenticated ? (
-                <Link to='/login' className='navbar-link'>
+                <Link
+                    to='/login'
+                    className='navbar-link'
+                    style={{ fontWeight: 'bold' }}
+                >
                     Login
                 </Link>
             ) : (
-                <Link className='navbar-link' onClick={handleLogout}>
+                <Link
+                    className='navbar-link'
+                    style={{ fontWeight: 'bold' }}
+                    onClick={handleLogout}
+                >
                     Logout
                 </Link>
             )}

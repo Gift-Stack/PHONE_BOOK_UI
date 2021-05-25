@@ -1,20 +1,11 @@
 import axios from 'axios';
 
-const setAuthToken = ({ token }) => {
-    // axios.interceptors.request.use(
-    //     config => {
-    //         config.headers.Authorization = `Bearer ${token}`;
-    //         return config;
-    //     },
-    //     err => {
-    //         console.error(err);
-    //     },
-    // );
-    // if (token) {
-    //     axios.defaults.headers.Authorization = `Bearer ${token}`;
-    // } else {
-    //     delete axios.defaults.headers.Authorization;
-    // }
-};
+const apiURL = 'https://we-skillz-phonebook-task.herokuapp.com/api/v1';
+const authAxios = axios.create({
+    baseURL: apiURL,
+    headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+    },
+});
 
-export default setAuthToken;
+export default authAxios;
