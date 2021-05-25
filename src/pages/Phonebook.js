@@ -5,6 +5,8 @@ import ContactContext from '../context/contacts/contactContext';
 import Loading from '../components/Loading';
 
 import firebase from '../firebase/config';
+import Contact from '../components/Contact';
+import ContactInfoModel from '../components/models/ContactInfoModel';
 
 const Phonebook = () => {
     const userContext = useContext(UserContext);
@@ -31,7 +33,6 @@ const Phonebook = () => {
 
         // eslint-disable-next-line
     }, []);
-    console.log(contact);
 
     const [value, setValue] = useState({
         firstName: '',
@@ -44,11 +45,6 @@ const Phonebook = () => {
     const { firstName, lastName, phoneAddress, email } = value;
     const handleChange = e => {
         setValue({ ...value, [e.target.name]: e.target.value });
-    };
-
-    let icons = false;
-    const hoverContact = () => {
-        icons = true;
     };
 
     const createContact = () => {
@@ -202,25 +198,16 @@ const Phonebook = () => {
 
                             {/* <hr className='w-100' /> */}
                             {contact.map(each_contact => (
-                                <tr key={each_contact.id} className='py-4 my-2'>
-                                    <td className='py-2 d-inline-block truncate'>
-                                        <span className='label'>
-                                            {each_contact.firstName[0].toUpperCase()}
-                                        </span>{' '}
-                                        {each_contact.firstName}{' '}
-                                        {each_contact.lastName}
-                                    </td>
-                                    <td className='py-2'>
-                                        {each_contact.phoneNumber}
-                                    </td>
-                                    <td className='py-2  d-inline-block truncate'>
-                                        {each_contact.address}
-                                    </td>
-                                    {/* <td className='py-2'>{icons && 'Some'}</td> */}
-                                </tr>
+                                <Contact
+                                    key={each_contact}
+                                    firstName={each_contact.firstName}
+                                    lastName={each_contact.lastName}
+                                    address={each_contact.address}
+                                    phoneNumber={each_contact.phoneNumber}
+                                />
                             ))}
                         </table>
-                        <table className='w-100 text-left'></table>
+                        <ContactInfoModel id='exampleModalCenter' />
                     </div>
                 </div>
             </div>

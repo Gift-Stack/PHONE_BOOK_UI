@@ -89,11 +89,12 @@ button {
 }
 #contact {
     border-collapse: collapse;
+    text-align: left;
 }
 #contact th {
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: left;
+    /* text-align: left; */
 }
 #contact tr:hover {
     background-color: #e5faf2;
@@ -103,12 +104,11 @@ button {
     width: 6rem;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
 }
 
 @media only screen and (max-width: 780px) {
     table {
-        /* text-align: center;  */
         font-size: small;
     }
 }
